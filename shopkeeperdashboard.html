@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopkeeper Dashboard</title>
+    <style>
+        /* Basic Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .navbar-logo h1 {
+            margin: 0;
+        }
+
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-menu li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .navbar-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background 0.3s;
+        }
+
+        .navbar-menu a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        /* Dropdown for Profile */
+        .dropdown {
+            cursor: pointer;
+        }
+
+        .profile-icon {
+            width: 24px;
+            height: 24px;
+            fill: white; /* White color for the icon */
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-menu li {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .dropdown-menu li a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Show Dropdown */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Background Image Section */
+        .background-image {
+            background: url('https://assets.farmsanctuary.org/content/uploads/2020/08/07141901/shutterstock_1042237903-1600x1067.jpg') no-repeat center center/cover;
+            height: 50vh; /* Covers half of the viewport height */
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            color: white;
+            text-align: left;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+    </style>
+    <script>
+        function logout() {
+            alert("You have been logged out.");
+            // Redirect to the login page
+            window.location.href = "login.html";
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <h1>Shopkeeper Dashboard</h1>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="entry.html">Home</a></li>
+            <li><a href="herbupload.php" class="btn">Add Product</a></li>
+            <li><a href="order_notification.php">Manage Orders</a></li>
+            <li><a href="edit_products.php">Manage Stock</a></li>
+            <li class="dropdown">
+                <!-- Profile Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="profile-icon" viewBox="0 0 24 24">
+                    <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+                </svg>
+                <ul class="dropdown-menu">
+                    <li><a href="shopkeeperprofile.php">Profile</a></li>
+                    <li><a href="entry.html" onclick="logout()">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Background Image Section -->
+    <div class="background-image"></div>
+
+    <!-- Main Content -->
+    <main>
+        <section id="home">
+            <h2>Welcome to the Shopkeeper Dashboard</h2>
+            <p>Navigate through the options to manage your store efficiently.</p>
+        </section>
+    </main>
+</body>
+</html>

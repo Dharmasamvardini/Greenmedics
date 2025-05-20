@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopkeeper Registration</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .background {
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .register-box {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent box */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 400px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .input-container {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        .login-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="register-box">
+            <h2>Shopkeeper Registration</h2>
+            <form id="shopkeeperForm" action="shopkeepersignin.html" method="POST" onsubmit="return validateForm()">
+                <div class="input-container">
+                    <label for="shopname">Shop Name</label>
+                    <input type="text" id="shopname" name="shopname" placeholder="Enter the shop name" required>
+                </div>
+                <div class="input-container">
+                    <label for="ownername">Owner Name</label>
+                    <input type="text" id="ownername" name="ownername" placeholder="Enter the owner's name" required>
+                </div>
+                <div class="input-container">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="Enter the shop address" required>
+                </div>
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-container">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" placeholder="Enter the shop location" required>
+                </div>
+                <div class="input-container">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter a username" required pattern="^[a-zA-Z0-9_]{5,15}$">
+                    <small class="error">Username must be 5-15 characters long and can include letters, numbers, and underscores.</small>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter a password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
+                    <small class="error">Password must be at least 8 characters long and include letters and numbers.</small>
+                </div>
+                <button type="submit" class="submit-btn">Register</button>
+                <a href="shopkeepersignin.html" class="login-link">Already have an account? Login here</a>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const shopname = document.getElementById('shopname').value;
+            const ownername = document.getElementById('ownername').value;
+            const email = document.getElementById('email').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Additional custom validations if required
+            if (!/^[a-zA-Z0-9_]{5,15}$/.test(username)) {
+                alert('Username must be 5-15 characters long and include letters, numbers, or underscores.');
+                return false;
+            }
+
+            if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
+                alert('Password must be at least 8 characters long and include letters and numbers.');
+                return false;
+            }
+
+            return true; // Form is valid
+        }
+    </script>
+</body>
+</html>

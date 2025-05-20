@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Herb Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('background.webp') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .admin-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color:#45a049;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .admin-button:hover {
+            background-color: #575757;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 350px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: block;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Admin Button -->
+    <a href="admin.php" class="admin-button">Admin</a>
+
+    <div class="container">
+        <h1>Welcome to Herb Store</h1>
+        <a href="first.html" class="button">Register</a>
+        <a href="first2.html" class="button">Login</a>
+    </div>
+</body>
+</html>
